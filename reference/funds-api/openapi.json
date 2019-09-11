@@ -1307,7 +1307,10 @@
             "foreign"
           ]
         }
-      }
+      },
+      "x-tags": [
+        "Funds"
+      ]
     },
     "fund-output": {
       "title": "Fund Output",
