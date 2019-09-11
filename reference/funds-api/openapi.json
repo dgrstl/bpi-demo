@@ -3,10 +3,8 @@
   "info": {
     "title": "Funds API",
     "version": "1.0",
-    "description": "This API allows customers to see available funds to invest and manage their portfolio with Banco Bpi.",
-    "contact": {
-      "name": ""
-    }
+    "description": "This API allows  customers to see available funds to invest and manage their portfolio with Banco Bpi.",
+    "contact": {}
   },
   "host": "gi3dinzwhj3gk4ttnfxw4lzrfyydu3lpmnvwk4roobzgs43nfz4w23a.prism.stoplight.io",
   "paths": {
