@@ -1,0 +1,1794 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Funds API",
+    "version": "1.0",
+    "description": "This API allows customers to see available funds to invest and manage their portfolio with Banco Bpi.",
+    "contact": {
+      "name": ""
+    }
+  },
+  "host": "gi3dinzwhj3gk4ttnfxw4lzrfyydu3lpmnvwk4roobzgs43nfz4w23a.prism.stoplight.io",
+  "paths": {
+    "/funds": {
+      "get": {
+        "summary": "List Fund",
+        "operationId": "findFunds",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/funds-output-paginated"
+            },
+            "examples": {
+              "application/json": {
+                "funds": [
+                  {
+                    "id": "sint esse",
+                    "kind": "api.bancobpi.pt/funds",
+                    "_links": {
+                      "self": {
+                        "href": "commodo tempor"
+                      }
+                    },
+                    "description": "commodo do tempor",
+                    "shortDescription": "deserunt Du",
+                    "currency": "dolore enim ut veniam id",
+                    "fundType": "???",
+                    "isin": "mollit non anim laborum"
+                  },
+                  {
+                    "id": "consequat commodo sint sunt",
+                    "kind": "api.bancobpi.pt/funds",
+                    "_links": {
+                      "self": {
+                        "href": "teste"
+                      }
+                    },
+                    "description": "officia occaecat ullamco dolor qui",
+                    "shortDescription": "culpa",
+                    "currency": "commodo",
+                    "fundType": "???",
+                    "isin": "culpa ut sint consectetur ut"
+                  },
+                  {
+                    "id": "culpa",
+                    "kind": "api.bancobpi.pt/funds",
+                    "_links": {
+                      "self": {
+                        "href": "occaecat exercitation"
+                      }
+                    },
+                    "description": "officia nulla iru",
+                    "shortDescription": "magna sed incididunt Duis",
+                    "currency": "Excepteur culpa",
+                    "fundType": "???",
+                    "isin": "dolore cillum tempo"
+                  },
+                  {
+                    "id": "dolor",
+                    "kind": "api.bancobpi.pt/funds",
+                    "_links": {
+                      "self": {
+                        "href": "amet Lorem ex reprehenderit cupidatat"
+                      }
+                    },
+                    "description": "amet mollit nulla cillum",
+                    "shortDescription": "fugiat aliquip do incididunt",
+                    "currency": "sunt laborum in",
+                    "fundType": "???",
+                    "isin": "et laborum"
+                  }
+                ],
+                "totalItems": 48112642,
+                "currentPage": 36427203,
+                "totalPages": 85852286,
+                "_links": {
+                  "self": {
+                    "href": "nulla ad do nisi in"
+                  },
+                  "next": {
+                    "href": "nisi cillum"
+                  },
+                  "prev": {
+                    "href": "laboris ex adipisicing"
+                  }
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "206": {
+            "description": "Partial response with pagination values in header",
+            "schema": {
+              "$ref": "#/definitions/funds-output-paginated"
+            },
+            "examples": {
+              "application/json": {
+                "funds": [
+                  {
+                    "id": "nulla eiusmo",
+                    "kind": "aliqua elit pariatur qui nostrud",
+                    "_links": {
+                      "self": {
+                        "href": "veniam magna"
+                      }
+                    },
+                    "description": "aliquip fugiat cupidatat do occaecat",
+                    "shortDescription": "et velit consequat",
+                    "currency": "dolor deserunt ullamco ad incididunt",
+                    "fundType": "???",
+                    "ISIN": "sit ut dolor pariatur"
+                  },
+                  {
+                    "id": "nostrud",
+                    "kind": "enim laborum eiusmod",
+                    "_links": {
+                      "self": {
+                        "href": "ex sint adipisicing amet"
+                      }
+                    },
+                    "description": "laborum ci",
+                    "shortDescription": "ut",
+                    "currency": "ut est",
+                    "fundType": "???",
+                    "ISIN": "proid"
+                  },
+                  {
+                    "id": "occaecat eu velit",
+                    "kind": "",
+                    "_links": {
+                      "self": {
+                        "href": "irure sint non"
+                      }
+                    },
+                    "description": "irure laboris in dolor",
+                    "shortDescription": "cupidatat minim Ut",
+                    "currency": "est nostrud occaecat qui Duis",
+                    "fundType": "???",
+                    "ISIN": "laboris Excepteur"
+                  }
+                ],
+                "totalItems": 6,
+                "currentPage": 1,
+                "totalPages": 2,
+                "_links": {
+                  "self": {
+                    "href": "eiusmod est id et do"
+                  },
+                  "next": {
+                    "href": "non"
+                  },
+                  "prev": {}
+                }
+              }
+            }
+          },
+          "403": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Funds"
+        ],
+        "description": "Returns a list of all funds that are available for the customer to invest in",
+        "parameters": [
+          {
+            "$ref": "https://next-api.stoplight.io/files.export?projectId=25189&branch=version%2F1.0&path=CommonLibrary.oas2.yml#/parameters/pageSize"
+          },
+          {
+            "$ref": "https://next-api.stoplight.io/files.export?projectId=25189&branch=version%2F1.0&path=CommonLibrary.oas2.yml#/parameters/pageNumber"
+          }
+        ]
+      }
+    },
+    "/funds/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "Fund ID"
+        }
+      ],
+      "get": {
+        "summary": "Get Fund",
+        "operationId": "getFund",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/fund-output-detailed"
+            },
+            "examples": {
+              "application/json": {
+                "id": "est reprehenderit ipsum",
+                "kind": "sed",
+                "_links": {
+                  "self": {
+                    "href": "adipisicing dolore proi"
+                  }
+                },
+                "description": "dolore",
+                "shortDescription": "dolore consequat",
+                "currency": "ut magna tempor cillum qui",
+                "fundType": "???",
+                "ISIN": "officia commodo Ut sed eiusmod",
+                "redemptionNotice": "incididunt",
+                "fees": {
+                  "subscription": "ex cupidatat",
+                  "redemption": "dolore esse adipisicing Lorem",
+                  "management": "sint Excepteur cupi",
+                  "transference": "proident laboris"
+                },
+                "conditions": {
+                  "minimumInitialInvestment": "fugiat deserunt dolore adipisicing",
+                  "minimoReforco???": "in consectet",
+                  "minimoPEPMensal???": "ut"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Funds"
+        ],
+        "description": "Returns the details of a fund"
+      }
+    },
+    "/portfolios/{accountGroupId}/positions": {
+      "parameters": [
+        {
+          "name": "accountGroupId",
+          "in": "path",
+          "type": "string",
+          "description": "Account group ID (NUC)",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "List Position",
+        "operationId": "findPositions",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/position-output-paginated"
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "positions": [
+                    {
+                      "fundId": "ullamco Lorem",
+                      "currency": "/QM",
+                      "id": "sint",
+                      "kind": "nostrud laborum",
+                      "_links": {
+                        "self": {
+                          "href": "incididunt Excepteur ad"
+                        }
+                      },
+                      "subscriptionDate": "1731-11-30",
+                      "customerId": "sed",
+                      "currentAmount": -82180742.14032076,
+                      "currentUnits": -55557531.721502684,
+                      "redeemableUnits": -49819653.20666903
+                    },
+                    {
+                      "fundId": "fugiat sint",
+                      "currency": "/XM",
+                      "id": "cupidatat sed fugiat",
+                      "kind": "velit Duis ut ipsum",
+                      "_links": {
+                        "self": {
+                          "href": "dolore"
+                        }
+                      },
+                      "subscriptionDate": "1182-05-30",
+                      "customerId": "cupidatat mollit anim",
+                      "currentAmount": -95650211.65505043,
+                      "currentUnits": -91121739.79200754,
+                      "redeemableUnits": 96572869.10623264
+                    },
+                    {
+                      "fundId": "nostrud ut laboris esse commodo",
+                      "currency": "/BN",
+                      "id": "ut officia ipsum",
+                      "kind": "minim voluptate in id in",
+                      "_links": {
+                        "self": {
+                          "href": "et elit cupidatat velit pariatur"
+                        }
+                      },
+                      "subscriptionDate": "2740-08-30",
+                      "customerId": "culpa adipisicing cupidatat Excepteur",
+                      "currentAmount": -73423271.81957127,
+                      "currentUnits": -95006939.02635278,
+                      "redeemableUnits": 43317016.67579302
+                    }
+                  ],
+                  "totalItems": 95148551,
+                  "currentPage": -43894288,
+                  "totalPages": 77591880,
+                  "_links": {
+                    "self": {
+                      "href": "enim ea id"
+                    },
+                    "next": {
+                      "href": "ut sed dolore laboris"
+                    },
+                    "prev": {}
+                  }
+                },
+                {
+                  "positions": [
+                    {
+                      "fundId": "qui ad",
+                      "currency": "/VN",
+                      "id": "ut",
+                      "kind": "pariatur commodo dolor consequat ex",
+                      "_links": {
+                        "self": {
+                          "href": "voluptate"
+                        }
+                      },
+                      "subscriptionDate": "1138-07-31",
+                      "customerId": "",
+                      "currentAmount": -89494471.79438862,
+                      "currentUnits": -24657172.83077775,
+                      "redeemableUnits": 52316597.09737921
+                    }
+                  ],
+                  "totalItems": 6126936,
+                  "currentPage": 42364429,
+                  "totalPages": -39690930,
+                  "_links": {
+                    "self": {
+                      "href": "voluptate tempor anim magna"
+                    },
+                    "next": {
+                      "href": "ullamco ut deserunt"
+                    },
+                    "prev": {}
+                  }
+                },
+                {
+                  "positions": [
+                    {
+                      "fundId": "cillum Excepteur velit",
+                      "currency": "/IM",
+                      "id": "in do elit non in",
+                      "kind": "sed do",
+                      "_links": {
+                        "self": {
+                          "href": "sit in"
+                        }
+                      },
+                      "subscriptionDate": "2684-06-14",
+                      "customerId": "cupidatat adipisicing officia commodo",
+                      "currentAmount": 8590417.033653393,
+                      "currentUnits": 38176880.15636778,
+                      "redeemableUnits": 29882403.191246837
+                    },
+                    {
+                      "fundId": "Lorem dolor",
+                      "currency": "/SZ",
+                      "id": "consequat",
+                      "kind": "in",
+                      "_links": {
+                        "self": {
+                          "href": "mollit"
+                        }
+                      },
+                      "subscriptionDate": "1252-03-02",
+                      "customerId": "nisi commodo incididunt magna enim",
+                      "currentAmount": -91291898.01905482,
+                      "currentUnits": -24744373.338915974,
+                      "redeemableUnits": -34859730.23432272
+                    }
+                  ],
+                  "totalItems": -76221677,
+                  "currentPage": -38915765,
+                  "totalPages": -66693043,
+                  "_links": {
+                    "self": {
+                      "href": "id laboris proident"
+                    },
+                    "next": {
+                      "href": "dolor officia cillum velit"
+                    },
+                    "prev": {}
+                  }
+                },
+                {
+                  "positions": [
+                    {
+                      "fundId": "consec",
+                      "currency": "/ZY",
+                      "id": "enim dolore",
+                      "kind": "aute nostr",
+                      "_links": {
+                        "self": {
+                          "href": "sint consectetur pariatur dolor"
+                        }
+                      },
+                      "subscriptionDate": "2688-02-08",
+                      "customerId": "amet Excepteur",
+                      "currentAmount": -78405028.5939231,
+                      "currentUnits": 37764649.45317963,
+                      "redeemableUnits": 29344668.510987803
+                    },
+                    {
+                      "fundId": "ea occaecat enim fugiat",
+                      "currency": "/OY",
+                      "id": "et amet aliquip",
+                      "kind": "irure ad",
+                      "_links": {
+                        "self": {
+                          "href": "qui"
+                        }
+                      },
+                      "subscriptionDate": "2187-03-29",
+                      "customerId": "adipisicing",
+                      "currentAmount": 9816889.39019239,
+                      "currentUnits": 56021081.06839153,
+                      "redeemableUnits": -89405016.03379226
+                    },
+                    {
+                      "fundId": "occaecat",
+                      "currency": "/WC",
+                      "id": "pariatur sint voluptate",
+                      "kind": "occaecat consequat esse Ut pariatur",
+                      "_links": {
+                        "self": {
+                          "href": "est ipsum enim"
+                        }
+                      },
+                      "subscriptionDate": "1177-10-05",
+                      "customerId": "officia ex",
+                      "currentAmount": 39992785.44199908,
+                      "currentUnits": 22136061.782748446,
+                      "redeemableUnits": -5163262.246297866
+                    }
+                  ],
+                  "totalItems": 66487105,
+                  "currentPage": -33506205,
+                  "totalPages": 26840421,
+                  "_links": {
+                    "self": {
+                      "href": "laboru"
+                    },
+                    "next": {
+                      "href": "dolor ullam"
+                    },
+                    "prev": {}
+                  }
+                },
+                {
+                  "positions": [
+                    {
+                      "fundId": "minim",
+                      "currency": "/CA",
+                      "id": "deserunt minim ",
+                      "kind": "mollit",
+                      "_links": {
+                        "self": {
+                          "href": "ut cupidatat amet"
+                        }
+                      },
+                      "subscriptionDate": "1406-09-11",
+                      "customerId": "elit dolore minim in do",
+                      "currentAmount": -84392711.34360133,
+                      "currentUnits": -54352981.37801969,
+                      "redeemableUnits": 19439071.848747388
+                    },
+                    {
+                      "fundId": "commodo",
+                      "currency": "/KW",
+                      "id": "Ut qui velit non",
+                      "kind": "enim",
+                      "_links": {
+                        "self": {
+                          "href": "aute officia sunt"
+                        }
+                      },
+                      "subscriptionDate": "1097-07-07",
+                      "customerId": "aliquip ullamco",
+                      "currentAmount": 93469946.04259121,
+                      "currentUnits": -18652035.11472453,
+                      "redeemableUnits": 57492827.74677175
+                    },
+                    {
+                      "fundId": "nulla tempor occaecat",
+                      "currency": "/FN",
+                      "id": "voluptate dolor sit id",
+                      "kind": "cupidatat elit dolor",
+                      "_links": {
+                        "self": {
+                          "href": "veniam"
+                        }
+                      },
+                      "subscriptionDate": "1872-09-19",
+                      "customerId": "aliquip",
+                      "currentAmount": 36757563.90406299,
+                      "currentUnits": 87565339.61628774,
+                      "redeemableUnits": 23175734.015461475
+                    },
+                    {
+                      "fundId": "occaecat ad",
+                      "currency": "/MF",
+                      "id": "aute deserunt Ut sint exercitation",
+                      "kind": "officia quis",
+                      "_links": {
+                        "self": {
+                          "href": "Ut ad consectetur"
+                        }
+                      },
+                      "subscriptionDate": "2030-10-30",
+                      "customerId": "veli",
+                      "currentAmount": 7091532.858088672,
+                      "currentUnits": -33770619.10281922,
+                      "redeemableUnits": -42544202.074120775
+                    },
+                    {
+                      "fundId": "fugiat in",
+                      "currency": "/EP",
+                      "id": "Duis nulla",
+                      "kind": "adipisicing Lorem",
+                      "_links": {
+                        "self": {
+                          "href": "reprehe"
+                        }
+                      },
+                      "subscriptionDate": "2381-05-29",
+                      "customerId": "quis sint",
+                      "currentAmount": 12326339.781661972,
+                      "currentUnits": -25407665.837193653,
+                      "redeemableUnits": 36893833.79994595
+                    }
+                  ],
+                  "totalItems": 86521425,
+                  "currentPage": 37868226,
+                  "totalPages": 3282674,
+                  "_links": {
+                    "self": {
+                      "href": "sint consequat magna irure anim"
+                    },
+                    "next": {
+                      "href": "Duis"
+                    },
+                    "prev": {}
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "tags": [
+          "Positions"
+        ],
+        "description": "Returns all portfolio positions of a customer. Position is a subscription at a specific fund."
+      }
+    },
+    "/positions/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Get Position",
+        "operationId": "getPosition",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/position-output-detailed"
+            },
+            "examples": {
+              "application/json": {
+                "fundId": "123",
+                "currency": "EUR",
+                "id": "1234",
+                "kind": "deserunt nostrud",
+                "_links": {
+                  "self": {
+                    "href": "in ipsum"
+                  }
+                },
+                "subscriptionDate": "2867-01-03",
+                "customerId": "123",
+                "currentAmount": 33254497.676001146,
+                "currentUnits": 15080167.282321438,
+                "redeemableUnits": 41638137.374428034
+              }
+            }
+          }
+        },
+        "tags": [
+          "Positions"
+        ],
+        "description": "Returns the details of a position"
+      }
+    },
+    "/funds/{fundId}/quotations": {
+      "parameters": [
+        {
+          "name": "fundId",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "List Quotation",
+        "operationId": "findQuotations",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/quotation-output-paginated"
+            },
+            "examples": {
+              "application/json": {
+                "quotations": [
+                  {
+                    "date": "2019-12-31",
+                    "value": 100,
+                    "currency": "EUR"
+                  },
+                  {
+                    "date": "2019-03-16",
+                    "value": 110,
+                    "currency": "EUR"
+                  },
+                  {
+                    "date": "2019-10-30",
+                    "value": 120,
+                    "currency": "EUR"
+                  },
+                  {
+                    "date": "2019-10-31",
+                    "value": 100,
+                    "currency": "EUR"
+                  }
+                ],
+                "totalItems": 4,
+                "currentPage": 1,
+                "totalPages": 1,
+                "_links": {
+                  "self": {
+                    "href": "https://api.funds.bancobpi.pt/quotations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Quotations"
+        ],
+        "description": "Returns the quotation history of a specified fund. If no filters are specified it returns the most recent quotation.\nYou can specify a date interval or a certain number of sample points. If both, the date interval with prevail.",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "fromDate",
+            "type": "string",
+            "format": "date",
+            "pattern": "([12]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01]))",
+            "description": "only return quotations from dates after this filter. (YYYY-MM-DD) [Date ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)"
+          },
+          {
+            "in": "query",
+            "name": "toDate",
+            "type": "string",
+            "format": "date",
+            "pattern": "([12]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01]))",
+            "description": "1. only return quotations from dates before this filter. (YYYY-MM-DD) [Date ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)"
+          },
+          {
+            "$ref": "https://next-api.stoplight.io/files.export?projectId=25189&branch=version%2F1.0&path=CommonLibrary.oas2.yml#/parameters/pageSize"
+          },
+          {
+            "$ref": "https://next-api.stoplight.io/files.export?projectId=25189&branch=version%2F1.0&path=CommonLibrary.oas2.yml#/parameters/pageNumber"
+          }
+        ]
+      }
+    },
+    "/quotations/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Get Quotation",
+        "operationId": "getQuotation",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/quotation-output-detailed"
+            },
+            "examples": {
+              "application/json": {
+                "date": "2011-08-21",
+                "value": 26078824.961632475,
+                "currency": "EUR"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Quotations"
+        ],
+        "description": "Returns the details of a quotation for a specified fund"
+      }
+    },
+    "/portfolios/{accountGroupId}/investment-plans": {
+      "get": {
+        "summary": "List InvestmentPlan",
+        "operationId": "findInvestmentPlans",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/investment-plan-output-paginated"
+            },
+            "examples": {
+              "application/json": {
+                "investmentPlans": [
+                  {
+                    "investmentDay": "veniam Excepteur fugiat",
+                    "amount": "",
+                    "fundId": "in ipsum ut deserunt",
+                    "id": "ea sed",
+                    "kind": "Ut sunt magna eiusmod",
+                    "_links": {
+                      "self": {
+                        "href": "occaecat amet laborum dolore officia"
+                      }
+                    },
+                    "periodicity": "annual",
+                    "startDate": "2648-09-29",
+                    "endDate": "2577-03-02",
+                    "nextInvestmentDate": "2637-12-30"
+                  },
+                  {
+                    "investmentDay": "et officia irure",
+                    "amount": "consequat fugiat Duis nostrud Ut",
+                    "fundId": "laborum nisi",
+                    "id": "Lorem sit sint labore",
+                    "kind": "nostrud labore",
+                    "_links": {
+                      "self": {
+                        "href": "labore est"
+                      }
+                    },
+                    "periodicity": "quarterly",
+                    "startDate": "1905-10-20",
+                    "endDate": "1523-10-22",
+                    "nextInvestmentDate": "1051-04-01"
+                  }
+                ],
+                "totalItems": 40445753,
+                "currentPage": 47693365,
+                "totalPages": 90187859,
+                "_links": {
+                  "self": {
+                    "href": "aliqua Excepteur"
+                  },
+                  "next": {
+                    "href": "commodo occaecat non quis"
+                  },
+                  "prev": {}
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Investment Plans"
+        ],
+        "description": "Returns the investment plan list of a given position",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "fundId",
+            "type": "string",
+            "description": "only return investment plans of the specified fund."
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create InvestmentPlan",
+        "operationId": "createInvestmentPlan",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/investment-plan-input"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/investment-plan-output-detailed"
+            },
+            "examples": {
+              "application/json": {
+                "investmentDay": "non ut commodo qui",
+                "amount": "aliqua",
+                "fundId": "amet nulla id",
+                "id": "proident Duis eiusmod",
+                "kind": "est",
+                "_links": {
+                  "self": {
+                    "href": "dolor esse fugiat dolo"
+                  }
+                },
+                "periodicity": "annual",
+                "startDate": "2213-10-31",
+                "endDate": "2465-11-18",
+                "nextInvestmentDate": "2924-03-30"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Investment Plans"
+        ],
+        "description": "Creates a new investment plan for a customer in a specified position. An invesment plan adds or redemption value recurrently from customer's fund based in a specified date."
+      },
+      "parameters": [
+        {
+          "name": "accountGroupId",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    "/investment-plans/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Get InvestmentPlan",
+        "operationId": "getInvestmentPlan",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/investment-plan-output-detailed"
+            },
+            "examples": {
+              "application/json": {
+                "investmentDay": "elit adipisicing dolore pariatur",
+                "amount": "qui dolor ad",
+                "id": "adipisicing",
+                "kind": "laboris adipisicing elit do",
+                "_links": {
+                  "self": {
+                    "href": "nisi eiusmod quis Lorem"
+                  }
+                },
+                "periodicity": "annual",
+                "startDate": "2284-10-15",
+                "endDate": "1382-12-21",
+                "nextInvestmentDate": "2922-06-30",
+                "fundId": "deserunt aliqua"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Investment Plans"
+        ],
+        "description": "Returns the details of a specified investment plan"
+      },
+      "patch": {
+        "summary": "Update InvestmentPlan",
+        "operationId": "updateInvestmentPlan",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/investment-plan-input"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/investment-plan-output-detailed"
+            },
+            "examples": {
+              "application/json": {
+                "investmentDay": "23",
+                "amount": "4234234234",
+                "id": "123",
+                "kind": "cupidatat culpa",
+                "_links": {
+                  "self": {
+                    "href": "adipisicing et magna qui ad"
+                  }
+                },
+                "periodicity": "quarterly",
+                "startDate": "2291-07-01",
+                "endDate": "2207-11-27",
+                "nextInvestmentDate": "2038-05-22",
+                "fundId": "1121"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Investment Plans"
+        ],
+        "description": "Updates a specified invesment plan "
+      },
+      "delete": {
+        "summary": "Delete InvestmentPlan",
+        "operationId": "deleteInvestmentPlan",
+        "responses": {
+          "204": {
+            "description": "",
+            "examples": {
+              "application/json": {}
+            }
+          }
+        },
+        "tags": [
+          "Investment Plans"
+        ],
+        "description": "Cancels a specified investment plan"
+      }
+    },
+    "/portfolios/{accountGroupId}/orders": {
+      "parameters": [
+        {
+          "name": "accountGroupId",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "List Order",
+        "operationId": "findOrders",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/order-output-paginated"
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "orders": [
+                    {
+                      "currency": "/GF",
+                      "date": "2354-10-27",
+                      "type": "redemption",
+                      "id": "nulla in minim amet proident",
+                      "kind": "reprehenderit enim Lorem voluptate sunt",
+                      "_links": {
+                        "self": {
+                          "href": "anim Duis incididunt"
+                        }
+                      },
+                      "amount": 67948601.60595831,
+                      "units": 30139576.930419132,
+                      "fundId": "incididunt proid"
+                    },
+                    {
+                      "currency": "/VQ",
+                      "date": "1371-10-01",
+                      "type": "redemption",
+                      "id": "esse",
+                      "kind": "Duis eiusmod nulla Excepteur",
+                      "_links": {
+                        "self": {
+                          "href": "culpa in eu"
+                        }
+                      },
+                      "amount": -96571996.032156,
+                      "units": 61604233.33616674,
+                      "fundId": "sit"
+                    },
+                    {
+                      "currency": "/GN",
+                      "date": "2922-08-30",
+                      "type": "redemption",
+                      "id": "Excepteur dolor Lorem",
+                      "kind": "Lorem ipsum",
+                      "_links": {
+                        "self": {
+                          "href": "Excepteu"
+                        }
+                      },
+                      "amount": 81143413.4215765,
+                      "units": 224101.37713330984,
+                      "fundId": "aute"
+                    },
+                    {
+                      "currency": "/VO",
+                      "date": "2955-12-30",
+                      "type": "buy",
+                      "id": "laboris eiusmod ut cupidatat",
+                      "kind": "eiusmod do deserunt laboris",
+                      "_links": {
+                        "self": {
+                          "href": "non"
+                        }
+                      },
+                      "amount": -22498058.264842063,
+                      "units": -12495056.972395882,
+                      "fundId": "Lorem deserunt"
+                    }
+                  ],
+                  "totalItems": 97442653,
+                  "currentPage": -12212412,
+                  "totalPages": 37900729,
+                  "_links": {
+                    "self": {
+                      "href": "deserunt Ut adipisicing cillum anim"
+                    },
+                    "next": {
+                      "href": "cupidatat"
+                    },
+                    "prev": {}
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "tags": [
+          "Orders"
+        ],
+        "description": "Returns a list of all orders for a specified position",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "fundId",
+            "type": "string",
+            "description": "only return orders from positions of the specified fund."
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create Order",
+        "operationId": "createOrder",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/order-input"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/order-output-detailed"
+            },
+            "examples": {
+              "application/json": {
+                "currency": "/AA",
+                "date": "2207-09-01",
+                "type": "buy",
+                "id": "veniam est ex deserunt",
+                "kind": "com",
+                "_links": {
+                  "self": {
+                    "href": "ea elit id mollit"
+                  }
+                },
+                "amount": 64957556.010519505,
+                "units": 61934527.59680879,
+                "fundId": "ut ex sunt commodo"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Orders"
+        ],
+        "description": "Creates an order for a specified position. The customer can create the following types of orders:\n* A subscription order, if it is the first order. A subscription order, when completed, represents a subscription agreement between the customer and the fund. When creating the first order for the customer, a portfolio will be created at the time of the agreement,\n\tallowing the customer to manage subscriptions and make orders in his portfolio. \n* A buy order increases the customer's position on a given fund\n* A redemption order decreases the customer's position on a given fund\n\nThe orders will be pending and available for cancellation until the cut-off window"
+      }
+    },
+    "/orders/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Get Order",
+        "operationId": "getOrder",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/order-output-detailed"
+            },
+            "examples": {
+              "application/json": {
+                "currency": "/YT",
+                "date": "2969-03-08",
+                "type": "buy",
+                "id": "",
+                "kind": "occaecat nulla",
+                "_links": {
+                  "self": {
+                    "href": "nisi deserunt ex consectetur tempor"
+                  }
+                },
+                "amount": 50428451.69179425,
+                "units": 69719215.55240047,
+                "fundId": "anim"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Orders"
+        ],
+        "description": "Returns the details of a specified order for a position"
+      },
+      "put": {
+        "summary": "Update Order",
+        "operationId": "updateOrder",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/order-input"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/order-output-detailed"
+            },
+            "examples": {
+              "application/json": {
+                "currency": "/CD",
+                "date": "2987-04-30",
+                "type": "buy",
+                "id": "ut quis commodo",
+                "kind": "nostrud ipsum anim voluptate",
+                "_links": {
+                  "self": {
+                    "href": "fugiat ullamco"
+                  }
+                },
+                "amount": -22067376.7422352,
+                "units": -2930179.487368971,
+                "fundId": "dolore"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Orders"
+        ],
+        "description": "Updates a specified order for a position"
+      },
+      "delete": {
+        "summary": "Delete Order",
+        "operationId": "deleteOrder",
+        "responses": {
+          "204": {
+            "description": "",
+            "examples": {
+              "application/json": {}
+            }
+          }
+        },
+        "tags": [
+          "Orders"
+        ],
+        "description": "Cancels a specified order if inside the cut-off window"
+      }
+    }
+  },
+  "definitions": {
+    "fund-common": {
+      "title": "Fund Common",
+      "description": "The properties that are shared amongst all versions of the Fund model.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Fund full description"
+        },
+        "shortDescription": {
+          "type": "string",
+          "description": "Fund short description"
+        },
+        "currency": {
+          "type": "string",
+          "description": "Funds value currency. [Currency ISO 4217](https://www.iso.org/iso-4217-currency-codes.html)",
+          "minLength": 3,
+          "maxLength": 3,
+          "pattern": "[A-Z]{3}"
+        },
+        "type": {
+          "type": "string",
+          "description": "Fund type",
+          "enum": [
+            "stocks",
+            "funds",
+            "bonds",
+            "flexible",
+            "lux",
+            "...",
+            "short term",
+            "other"
+          ]
+        },
+        "isin": {
+          "type": "string",
+          "description": "International Securities Identification Number"
+        },
+        "redemptionNotice": {
+          "type": "string",
+          "description": "To indicate a period in days to wait a redemption "
+        },
+        "fees": {
+          "type": "object",
+          "properties": {
+            "subscription": {
+              "type": "string"
+            },
+            "redemption": {
+              "type": "string",
+              "description": "Só temos uma comissão de resgate? Não temos uma lista de vários periodos? Primeiros 90 dias, primeiros 180 dias e após 365"
+            },
+            "management": {
+              "type": "string"
+            },
+            "transference": {
+              "type": "string",
+              "description": "É comissão de transferência. O que significado de comissão de transferência?"
+            }
+          }
+        },
+        "conditions": {
+          "type": "object",
+          "properties": {
+            "minimumInitialInvestment": {
+              "type": "string"
+            },
+            "minimoReforco???": {
+              "type": "string"
+            },
+            "minimoPepMensal???": {
+              "type": "string"
+            }
+          }
+        },
+        "manager": {
+          "type": "string",
+          "enum": [
+            "national BPI",
+            "national non BPI",
+            "foreign"
+          ]
+        }
+      }
+    },
+    "fund-output": {
+      "title": "Fund Output",
+      "description": "The properties that are included when fetching a list of Funds.",
+      "allOf": [
+        {
+          "$ref": "https://next-api.stoplight.io/files.export?projectId=25189&branch=version%2F1.0&path=CommonLibrary.oas2.yml#/definitions/common-body"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string",
+              "description": "Fund full description"
+            },
+            "shortDescription": {
+              "type": "string",
+              "description": "Fund short description"
+            },
+            "currency": {
+              "type": "string",
+              "description": "Funds value currency. [Currency ISO 4217](https://www.iso.org/iso-4217-currency-codes.html)"
+            },
+            "fundType": {
+              "type": "string",
+              "description": "Fund type",
+              "enum": [
+                "???"
+              ]
+            },
+            "ISIN": {
+              "type": "string",
+              "description": "International Securities Identification Number"
+            }
+          }
+        }
+      ]
+    },
+    "fund-output-detailed": {
+      "title": "Fund Output Detailed",
+      "description": "The properties that are included when fetching a single Fund.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/fund-output"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "redemptionNotice": {
+              "type": "string",
+              "description": "To indicate a period in days to wait a redemption "
+            },
+            "fees": {
+              "type": "object",
+              "properties": {
+                "subscription": {
+                  "type": "string"
+                },
+                "redemption": {
+                  "type": "string",
+                  "description": "Só temos uma comissão de resgate? Não temos uma lista de vários periodos? Primeiros 90 dias, primeiros 180 dias e após 365"
+                },
+                "management": {
+                  "type": "string"
+                },
+                "transference": {
+                  "type": "string",
+                  "description": "É comissão de transferência. O que significado de comissão de transferência?"
+                }
+              }
+            },
+            "conditions": {
+              "type": "object",
+              "properties": {
+                "minimumInitialInvestment": {
+                  "type": "string"
+                },
+                "minimoReforco???": {
+                  "type": "string"
+                },
+                "minimoPEPMensal???": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "quotation-common": {
+      "title": "Quotation Common",
+      "description": "The properties that are shared amongst all versions of the Quotation model.",
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "string",
+          "description": "Quotation's date. (YYYY-MM-DD) [Date ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)",
+          "format": "date",
+          "pattern": "([12]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01]))"
+        },
+        "value": {
+          "type": "number",
+          "description": "Net Asset Value (NAV)"
+        },
+        "currency": {
+          "type": "string",
+          "description": "Quotation value currency. [Currency ISO 4217](https://www.iso.org/iso-4217-currency-codes.html)",
+          "minLength": 3,
+          "maxLength": 3,
+          "pattern": "[A-Z]{3}"
+        }
+      }
+    },
+    "quotation-output": {
+      "title": "Quotation Output",
+      "description": "The properties that are included when fetching a list of Quotations.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/quotation-common"
+        }
+      ]
+    },
+    "quotation-output-detailed": {
+      "title": "Quotation Output Detailed",
+      "description": "The properties that are included when fetching a single Quotation.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/quotation-output"
+        }
+      ]
+    },
+    "position-common": {
+      "title": "Position Common",
+      "description": "The properties that are shared amongst all versions of the Position model.",
+      "type": "object",
+      "properties": {
+        "fundId": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string",
+          "description": "Investment value currency. [Currency ISO 4217](https://www.iso.org/iso-4217-currency-codes.html)",
+          "minLength": 3,
+          "maxLength": 3,
+          "pattern": "[A-Z]{3}"
+        },
+        "customerId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "fundId",
+        "currency"
+      ]
+    },
+    "position-output": {
+      "title": "Position Output",
+      "description": "The properties that are included when fetching a list of Positions.",
+      "allOf": [
+        {
+          "$ref": "https://next-api.stoplight.io/files.export?projectId=25189&branch=version%2F1.0&path=CommonLibrary.oas2.yml#/definitions/common-body"
+        },
+        {
+          "$ref": "#/definitions/position-common"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "currentAmount": {
+              "type": "number"
+            },
+            "currentUnits": {
+              "type": "number"
+            },
+            "redeemableUnits": {
+              "type": "number"
+            }
+          }
+        }
+      ]
+    },
+    "position-output-detailed": {
+      "title": "Position Output Detailed",
+      "description": "The properties that are included when fetching a single position.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/position-output"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "investment-plan-common": {
+      "title": "InvestmentPlan Common",
+      "description": "The properties that are shared amongst all versions of the InvestmentPlan model.",
+      "type": "object",
+      "properties": {
+        "periodicity": {
+          "type": "string",
+          "enum": [
+            "annual",
+            "semiannual",
+            "quarterly",
+            "bimonthly",
+            "monthly"
+          ],
+          "description": "Periodicity of the investment plan"
+        },
+        "startDate": {
+          "type": "string",
+          "description": "Start date of the plan. (YYYY-MM-DD) [Date ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)",
+          "format": "date",
+          "pattern": "([12]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01]))"
+        },
+        "endDate": {
+          "type": "string",
+          "description": "End date of the plan. (YYYY-MM-DD) [Date ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)",
+          "format": "date",
+          "pattern": "([12]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01]))"
+        },
+        "investmentDay": {
+          "type": "string",
+          "description": "Day that will occur the automatic investment"
+        },
+        "amount": {
+          "type": "string",
+          "description": "Investment amount"
+        },
+        "nextInvestmentDate": {
+          "type": "string",
+          "description": "Date that will occur the next automatic investment. (YYYY-MM-DD) [Date ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)",
+          "format": "date",
+          "pattern": "([12]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01]))"
+        },
+        "fundId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "investmentDay",
+        "amount",
+        "fundId"
+      ]
+    },
+    "investment-plan-input": {
+      "title": "InvestmentPlan Input",
+      "description": "The properties that are allowed when creating or updating a InvestmentPlan.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/investment-plan-common"
+        }
+      ]
+    },
+    "investment-plan-output": {
+      "title": "InvestmentPlan Output",
+      "description": "The properties that are included when fetching a list of InvestmentPlans.",
+      "allOf": [
+        {
+          "$ref": "https://next-api.stoplight.io/files.export?projectId=25189&branch=version%2F1.0&path=CommonLibrary.oas2.yml#/definitions/common-body"
+        },
+        {
+          "$ref": "#/definitions/investment-plan-common"
+        }
+      ]
+    },
+    "investment-plan-output-detailed": {
+      "title": "InvestmentPlan Output Detailed",
+      "description": "The properties that are included when fetching a single InvestmentPlan.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/investment-plan-output"
+        },
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "order-common": {
+      "title": "Order Common",
+      "description": "The properties that are shared amongst all versions of the Position model.",
+      "type": "object",
+      "properties": {
+        "currency": {
+          "type": "string",
+          "description": "Investment value currency. [Currency ISO 4217](https://www.iso.org/iso-4217-currency-codes.html)",
+          "minLength": 3,
+          "maxLength": 3,
+          "pattern": "[A-Z]{3}"
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "pattern": "/([12]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01]))/",
+          "description": "Order date. (YYYY-MM-DD) [Date ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)"
+        },
+        "amount": {
+          "type": "number"
+        },
+        "units": {
+          "type": "number"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "buy",
+            "redemption"
+          ]
+        },
+        "fundId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "currency",
+        "date",
+        "type"
+      ]
+    },
+    "order-input": {
+      "title": "Order Input",
+      "description": "The properties that are allowed when creating or updating a Order.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/order-common"
+        }
+      ]
+    },
+    "order-output": {
+      "title": "Order Output",
+      "description": "The properties that are included when fetching a list of Orders.",
+      "allOf": [
+        {
+          "$ref": "https://next-api.stoplight.io/files.export?projectId=25189&branch=version%2F1.0&path=CommonLibrary.oas2.yml#/definitions/common-body"
+        },
+        {
+          "$ref": "#/definitions/order-common"
+        }
+      ]
+    },
+    "order-output-detailed": {
+      "title": "Order Output Detailed",
+      "description": "The properties that are included when fetching a single Order.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/order-output"
+        },
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "funds-output-paginated": {
+      "title": "Funds Output Paginated",
+      "description": "The properties that are included when fetching a paginated list of funds.",
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "funds": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/fund-output"
+              }
+            }
+          }
+        },
+        {
+          "$ref": "https://next-api.stoplight.io/files.export?projectId=25189&branch=version%2F1.0&path=CommonLibrary.oas2.yml#/definitions/pagination-body"
+        }
+      ]
+    },
+    "investment-plan-output-paginated": {
+      "title": "InvestmentPlan Output Paginated",
+      "description": "The properties that are included when fetching a paginated list of investment plans.",
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "investmentPlans": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/investment-plan-output"
+              }
+            }
+          }
+        },
+        {
+          "$ref": "https://next-api.stoplight.io/files.export?projectId=25189&branch=version%2F1.0&path=CommonLibrary.oas2.yml#/definitions/pagination-body"
+        }
+      ]
+    },
+    "order-output-paginated": {
+      "title": "Order Output Paginated",
+      "description": "The properties that are included when fetching a paginated list of orders.",
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "orders": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/order-output"
+              }
+            }
+          }
+        },
+        {
+          "$ref": "https://next-api.stoplight.io/files.export?projectId=25189&branch=version%2F1.0&path=CommonLibrary.oas2.yml#/definitions/pagination-body"
+        }
+      ]
+    },
+    "position-output-paginated": {
+      "title": "Position Output Paginated",
+      "description": "The properties that are included when fetching a paginated list of positions.",
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "positions": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/position-output"
+              }
+            }
+          }
+        },
+        {
+          "$ref": "https://next-api.stoplight.io/files.export?projectId=25189&branch=version%2F1.0&path=CommonLibrary.oas2.yml#/definitions/pagination-body"
+        }
+      ]
+    },
+    "quotation-output-paginated": {
+      "title": "Quotation Output Paginated",
+      "description": "The properties that are included when fetching a paginated list of quotations.",
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "quotations": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/quotation-output"
+              }
+            }
+          }
+        },
+        {
+          "$ref": "https://next-api.stoplight.io/files.export?projectId=25189&branch=version%2F1.0&path=CommonLibrary.oas2.yml#/definitions/pagination-body"
+        }
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "Funds",
+      "description": "Allow customers to see a list of available funds to invest"
+    },
+    {
+      "name": "Quotations",
+      "description": "Allows customers to see quotations for a specified fund"
+    },
+    {
+      "name": "Positions"
+    },
+    {
+      "name": "Investment Plans",
+      "description": "Allow custormers to create investment plans that add or redemption value recurrently in funds"
+    },
+    {
+      "name": "Orders"
+    },
+    {
+      "name": "Movements",
+      "description": "Allow customers to see movements for a specified position"
+    }
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ]
+}
