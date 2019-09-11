@@ -16,7 +16,7 @@
         "operationId": "findFunds",
         "responses": {
           "200": {
-            "description": "",
+            "descriptiaaon": "",
             "schema": {
               "$ref": "#/definitions/funds-output-paginated"
             },
@@ -180,6 +180,23 @@
           },
           {
             "$ref": "https://next-api.stoplight.io/files.export?projectId=25189&branch=version%2F1.0&path=CommonLibrary.oas2.yml#/parameters/pageNumber"
+          }
+        ]
+      },
+      "post": {
+        "summary": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": ""
+            }
           }
         ]
       }
